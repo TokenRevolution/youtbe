@@ -1,0 +1,91 @@
+:root {
+  /* Palette (colori) */
+  --color-primary: #2c3e50; /* colore primario (scuro) */
+  --color-secondary: #e74c3c; /* colore secondario (rosso) */
+  --color-accent: #3498db; /* colore accent (blu) */
+  --color-background: #f8f9fa; /* sfondo (chiaro) */
+  --color-text: #2c3e50; /* testo (scuro) */
+  --color-text-light: #ecf0f1; /* testo (chiaro) */
+  --color-border: #bdc3c7; /* colore bordo (grigio) */
+  /* Tipografia */
+  --font-family-base: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-size-base: 16px;
+  --line-height-base: 1.6;
+  --letter-spacing: 0.01em;
+  /* Transizioni */
+  --transition-duration: 0.3s;
+  --transition-timing: ease;
+  /* Layout */
+  --max-width: 1200px;
+  /* (eventuali altre variabili) */
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  letter-spacing: var(--letter-spacing);
+  font-weight: 400;
+  color-scheme: light dark;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color var(--transition-duration) var(--transition-timing);
+}
+a:hover {
+  color: var(--color-secondary);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  cursor: pointer;
+  transition: border-color var(--transition-duration) var(--transition-timing), background-color var(--transition-duration) var(--transition-timing);
+}
+button:hover {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-text: #213547;
+    --color-background: #ffffff;
+  }
+  a:hover {
+    color: var(--color-secondary);
+  }
+  button {
+    background-color: var(--color-background);
+    color: var(--color-text);
+  }
+}
