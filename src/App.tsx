@@ -100,8 +100,47 @@ const App: React.FC = () => {
   };
 
   return (
-    <Container maxWidth="sm" sx={{ mt: { xs: 2, sm: 4, md: 8 }, px: { xs: 1, sm: 2, md: 3 }, width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3, bgcolor: 'background.paper', borderRadius: 2, boxShadow: 1, p: 2, maxWidth: 'sm', mx: 'auto', width: '100%' }}>
+    <Container 
+      maxWidth="sm" 
+      sx={{ 
+        mt: { xs: 2, sm: 4, md: 8 }, 
+        px: { xs: 1, sm: 2, md: 3 }, 
+        width: '100%', 
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center',
+        minHeight: '100vh',
+        backgroundImage: 'url("https://cms.studyinsweden.se//app/uploads/2016/05/research.jpeg")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        '&::before': {
+          content: '""',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: 'rgba(255, 255, 255, 0.85)', // This creates the transparency effect
+          zIndex: 0
+        }
+      }}
+    >
+      <Box sx={{ 
+        display: 'flex', 
+        flexDirection: 'column', 
+        alignItems: 'center', 
+        gap: 3, 
+        bgcolor: 'background.paper', 
+        borderRadius: 2, 
+        boxShadow: 1, 
+        p: 2, 
+        maxWidth: 'sm', 
+        mx: 'auto', 
+        width: '100%',
+        position: 'relative', // This ensures the content stays above the background
+        zIndex: 1 // This ensures the content stays above the background
+      }}>
         <Typography variant="h4" fontWeight={700} gutterBottom sx={{ color: 'primary.main' }}> Channel Scanner (YouTube) </Typography>
         <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: 2, width: '100%' }}>
           <TextField
